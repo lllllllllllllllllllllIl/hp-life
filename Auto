@@ -5,7 +5,7 @@ bb = hookmetamethod(game, '__namecall', newcclosure(function(self, ...)
 
     if not checkcaller() and method == 'FireServer' and tostring(self) == 'Shoot' and args[2] == 'Starting' then
         bb(self, unpack(args));
-        task.delay(0.5, newcclosure(function()
+        task.delay(0.3, newcclosure(function()
             self.FireServer(self, 1, 'Ending', 'down', args[4], args[5], args[6]);
         end));
     end;
